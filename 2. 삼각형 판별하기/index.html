@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer="YES", max;
+                let sum = a + b + c;
+                // find the max value between a, b, c
+                // 1st solution (Math.max method)
+                // max = Math.max(a, b, c);
+
+                // 2nd solution (if, else statement)
+                // if (a<b) max=b;
+                // else max=a;
+                // if (max<c) max=c;
+                
+                // 3nd solution (ternary operator)
+                max = a<b? b:a;
+                max = max<c? c:max;
+
+                // no one knows which one is max value
+                // prove whether the triangle can be made or not
+                // 삼각형의 세 변의 길이를 a, b, c 라고 하면
+                // c가 가장 긴 변일 때 a + b > c  (나머지 두 변의 길이의 합이 가장 긴 변의 길이보다 길다)
+                if (sum - max <= max) answer="NO";
+                return answer;
+            }
+
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>

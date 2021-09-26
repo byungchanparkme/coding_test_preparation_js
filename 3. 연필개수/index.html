@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                let answer;
+                // 1st solution: Math.ceil() : 소수점이 있으면 무조건 올림
+                // answer = Math.ceil(n / 12);
+                // 2nd solution:
+                answer = n%12 ? n : n+1;
+                return answer;
+            }
+
+            console.log(solution(178));
+        </script>
+    </body>
+</html>

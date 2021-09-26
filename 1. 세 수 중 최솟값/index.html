@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;
+                // standard solution. using if, if ~ else statement
+                if (a < b) answer = a;
+                else answer = b;
+                if (c < answer) answer = c;
+
+                // 1st solution. using Math.min method
+                // answer = Math.min(a, b, c);
+                
+                // 2nd solution. using the array and array method reduce
+                // let numArr = [a, b, c];
+                // answer = numArr.reduce((prev, curr) => prev > curr ? curr : prev);
+                // console.log(answer);
+
+                // 3rd solution. using ternary operator
+                // compare a with b
+                answer = a > b ? b : a;
+                // compare b with c
+                answer = answer > c ? c : answer;
+                
+                return answer;
+            }
+
+            console.log(solution(2, 5, 1));
+        </script>
+    </body>
+</html>
