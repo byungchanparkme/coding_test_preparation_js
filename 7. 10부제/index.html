@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(day, arr){
+                let answer=0;
+
+                // 1. 각 자동차 번호를 10으로 나눴을 때 나머지 값은 결국 일의 자리 숫자만 남는다.
+                let carNumArr = arr.map(num => num % 10);
+                // 2. 남은 일의 자리 숫자와 날짜의 일의 자리 숫자 일치 여부를 판단 후 위반 자동차 수 count 한다.
+                // 2번 과정 1st way
+                // carNumArr.forEach(carNum => {
+                //     answer += (carNum === day) ? 1 : 0; 
+                // });
+ 
+                // 2번 과정 2nd way
+                answer = carNumArr.filter(carNum => carNum === day).length;
+                 
+                return answer;
+            }
+            
+            arr=[1, 20, 54, 30, 87, 91, 30];
+            console.log(solution(0, arr));
+        </script>
+    </body>
+</html>

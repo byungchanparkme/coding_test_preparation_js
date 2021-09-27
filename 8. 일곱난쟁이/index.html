@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                // 얕은 복사, arr 을 바꾸면 answer 도 바뀐다.
+                let answer=arr;
+                let sumOfArr = arr.reduce((acc, currEl) => acc + currEl, 0);
+                
+                // i 는 끝까지 돌 필요가 없음. (j 가 대신 끝 요소에 접근)
+                for (let i = 0; i < arr.length-1; i++) {
+                    for (let j = i+1; j < arr.length; j++) {
+                        if ((sumOfArr - (arr[i] + arr[j])) === 100) {
+                            // i 번째 요소를 먼저 지울 경우, arr.length 의 길이가 바뀌어서 j 번째 위치에 있는 요소가 바뀐다.
+                            arr.splice(j, 1);
+                            arr.splice(i, 1);
+                        }
+                    }
+                }
+                answer = arr;
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer='';
+
+                // 1. 입력 배열에서 홀수인 자연수들만 골라낸다.
+                let oddNumArr = arr.filter(num => num % 2 != 0);
+                
+                // 2. 홀수인 자연수들의 합계를 구한다.
+                let sumOfOddNum = oddNumArr.reduce((acc, currNum) => acc + currNum, 0);
+                answer += sumOfOddNum;
+                
+                // 3. 한 줄 띄우기 위해 \n 추가
+                answer += '\n';
+
+                // 3. 고른 홀수들 중 최솟값을 찾는다.
+                let minOddNum = Math.min(...oddNumArr);
+                answer += minOddNum;
+                
+                return answer;
+            }
+            
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
